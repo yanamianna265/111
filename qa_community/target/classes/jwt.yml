@@ -1,0 +1,3 @@
+jwt:
+  secret: mySecretKeyForJwtTokenGenerationThatIsAtLeast256BitsLongForHS256Algorithm
+  expiration: 86400000
