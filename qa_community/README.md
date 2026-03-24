@@ -12,12 +12,12 @@
 - Maven
 
 
-### 1. 环境准备（Day1）
+### 1. 环境准备（part1）
 - JDK 17+
 - MySQL 8.0+
 - Maven 3.6+
 
-### 2. 初始化数据库(Day1)
+### 2. 初始化数据库(part1)
 mysql -u root -p < ../doc/db_design/schema.sql
 
 ### 3. 修改配置文件
@@ -38,7 +38,7 @@ mvn spring-boot:run
 使用 Postman 或 curl 测试：
     注册用户，登录用户功能正常
 
-## 当前进度 (Day 2)
+## 当前进度 (part 2)
 ✅ 完成 Spring Boot 项目初始化  
 ✅ 完成数据库配置  
 ✅ 实现用户实体与 Mapper  
