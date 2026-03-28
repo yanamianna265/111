@@ -35,10 +35,26 @@ password: your_mysql_password
 mvn spring-boot:run
 
 ### 6. 测试接口
-使用 Postman 或 curl 测试：
-    注册用户，登录用户功能正常
+ 使用Apifox进行测试：
+    （1）注册用户，登录用户功能正常
+    参数：username、password、email（可选）
+    新建请求 → 选择 POST
+    输入 URL: http://localhost:8080/api/user/register
+    添加参数：
+    username: alice123
+    password: 123456
+    email: alice123@example.com
+    （注册成功）
 
-## 当前进度 (Day 2)2026-3-18
+    （2）登录接口正常
+    新建请求 → 选择 POST
+    输入 URL: http://localhost:8080/api/user/login
+    添加参数：
+    username: alice123
+    password: 123456
+    （登录成功）
+
+## 当前进度 (Day 2)
 ✅ 完成 Spring Boot 项目初始化  
 ✅ 完成数据库配置  
 ✅ 实现用户实体与 Mapper  
@@ -46,15 +62,3 @@ mvn spring-boot:run
 ✅ 实现用户注册接口（含参数校验、密码加密）  
 ✅ 实现用户登录接口（JWT 认证）  
 ✅ 完成接口测试
-
-## 2026-3-19
-DAY 3
-任务清单：实现核心业务CRUD
-1.问题部分
-（1）.发布问题（带标签）
-（2）.分页查询问题列表（时间排序）
-（3）.查看详细问题
-2.回答部分
-（1）针对问题发布回答
-（2）查询所有回答
-3.测试
