@@ -1,0 +1,37 @@
+简易问答社区 ER 图描述
+
+实体1: User (用户)
+- user_id (PK)         : INT, 自增主键
+- username             : VARCHAR(50), 唯一, 非空
+- password_hash        : VARCHAR(255), 非空 (存储加密后的密码)
+- email                : VARCHAR(100), 可选
+- created_at           : DATETIME, 默认当前时间
+
+实体2: Question (问题)
+- question_id (PK)     : INT, 自增主键
+- title                : VARCHAR(200), 非空
+- content              : TEXT, 非空
+- tag                  : VARCHAR(50), 可选 (问题标签, 如 "Java", "Spring")
+- user_id (FK)         : INT, 非空, 关联 User.user_id
+- created_at           : DATETIME, 默认当前时间
+
+实体3: Answer (回答)
+- answer_id (PK)       : INT, 自增主键
+- content              : TEXT, 非空
+- question_id (FK)     : INT, 非空, 关联 Question.question_id
+- user_id (FK)         : INT, 非空, 关联 User.user_id
+- created_at           : DATETIME, 默认当前时间
+
+实体4: Comment (评论)
+- comment_id (PK)      : INT, 自增主键
+- content              : TEXT, 非空
+- answer_id (FK)       : INT, 非空, 关联 Answer.answer_id
+- user_id (FK)         : INT, 非空, 关联 User.user_id
+- created_at           : DATETIME, 默认当前时间
+
+关系描述:
+- User --< Question (一对多)
+- User --< Answer (一对多)
+- User --< Comment (一对多)
+- Question --< Answer (一对多)
+- Answer --< Comment (一对多)
